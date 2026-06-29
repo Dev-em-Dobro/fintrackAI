@@ -4,6 +4,7 @@ import Image from "next/image";
 import DashboardIcon from "@/src/assets/reports-icon.png";
 import ReportIcon from "@/src/assets/transactions-icon.png";
 import Logo from "@/src/assets/logo.png";
+import Logout from "@/src/assets/logout.png";
 import { LogoutButton } from "./logout";
 
 export default function Sidebar() {
@@ -25,13 +26,13 @@ export default function Sidebar() {
           Dashboard
         </Link>
 
-        <div
-          className="flex items-center gap-3 px-4 py-3 text-slate-500 rounded-xl opacity-50 cursor-not-allowed select-none"
-          title="Disponível em uma próxima aula"
+        <Link
+          href="/transactions"
+          className="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-100 rounded-xl"
         >
           <Image src={ReportIcon} alt="" />
           Relatórios
-        </div>
+        </Link>
       </nav>
 
       <div className="p-6 border-t border-[#1d293d]">

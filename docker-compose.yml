@@ -1,0 +1,10 @@
+services:
+  fintrack-ai:
+    image: postgres:15
+    container_name: fintrack
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: fintrack
+    ports:
+      - "5432:5432"

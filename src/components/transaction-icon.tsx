@@ -1,10 +1,9 @@
 import Image from "next/image";
+import { TransactionType } from "@prisma/client";
 
 import Food from "@/src/assets/food.png";
 import Box from "@/src/assets/box.png";
 import Tv from "@/src/assets/tv.png";
-
-type TransactionType = "DEPOSIT" | "EXPENSE" | "INVESTMENT";
 
 interface TransactionIconProps {
     type: TransactionType;

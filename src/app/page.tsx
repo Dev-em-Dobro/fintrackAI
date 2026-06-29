@@ -2,6 +2,7 @@ import Sidebar from "@/src/components/sidebar";
 import Header from "@/src/components/header";
 import BalanceCard from "@/src/components/balance-card";
 import ChartCard from "@/src/components/chart-card";
+import Insights from "@/src/components/insights";
 
 import PigIcon from "@/src/assets/pig-icon.png";
 import Image from "next/image";
@@ -40,6 +41,17 @@ export default function Home() {
                 expensesTotal={data.expensesTotal}
                 investmentsTotal={data.investmentsTotal}
                 balance={data.balance}
+              />
+            </div>
+            <div className="w-1/2">
+              <Insights
+                month="06"
+                year={2026}
+                depositsTotal={data.depositsTotal}
+                expensesTotal={data.expensesTotal}
+                investmentsTotal={data.investmentsTotal}
+                balance={data.balance}
+                totalExpensePerCategory={[]}
               />
             </div>
           </section>

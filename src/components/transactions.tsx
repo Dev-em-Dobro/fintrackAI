@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { TransactionIcon } from "./transaction-icon";
+import { AddTransactionButton } from "./add-transaction-button";
 
 type TransactionType = "DEPOSIT" | "EXPENSE" | "INVESTMENT";
 
@@ -23,6 +24,7 @@ export default function Transactions() {
     <div>
       <div className="flex justify-between">
         <p className="text-xl font-bold">Transações recentes</p>
+        <AddTransactionButton />
       </div>
 
       <div className="bg-[#161b26] rounded-3xl border border-[#1d293d] overflow-hidden">

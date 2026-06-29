@@ -1,6 +1,7 @@
 import Sidebar from "@/src/components/sidebar";
 import Header from "@/src/components/header";
 import BalanceCard from "@/src/components/balance-card";
+import ChartCard from "@/src/components/chart-card";
 
 import PigIcon from "@/src/assets/pig-icon.png";
 import Image from "next/image";
@@ -29,9 +30,17 @@ export default function Home() {
               </div>
               <h4 className="text-lg font-bold">Economia do mês</h4>
               <p className="text-3xl font-bold text-emerald-500 mt-2">+12%</p>
-              <p className="text-xs text-slate-500 mt-2 text-center">
-                Você economizou R$ 120,00 a mais que no mês passado.
-              </p>
+            </div>
+          </section>
+
+          <section className="flex w-full gap-8">
+            <div className="w-1/2">
+              <ChartCard
+                depositsTotal={data.depositsTotal}
+                expensesTotal={data.expensesTotal}
+                investmentsTotal={data.investmentsTotal}
+                balance={data.balance}
+              />
             </div>
           </section>
         </div>

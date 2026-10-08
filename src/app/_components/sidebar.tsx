@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import dashboardIcon from '@/src/assets/dashboard-icon.png'
 import transactionsIcon from '@/src/assets/transactions-icon.png'
 import logo from '@/src/assets/logo.png'
-import logoutIcon from '@/src/assets/logout-icon.png'
+import { Logout } from './logout'
 import Link from 'next/link'
 
 const inter = Inter({
@@ -49,12 +49,7 @@ export const Sidebar = () => {
             </nav>
 
             <div className="border-t border-[#1E293B] px-6 py-6">
-                <button className="flex items-center gap-3 rounded-xl px-4 py-3 text-[#94A3B8]">
-                    <Image src={logoutIcon} alt="" />
-                    <span className="text-base font-medium leading-normal text-center">
-                        Sair
-                    </span>
-                </button>
+                <Logout />
             </div>
         </aside>
     )

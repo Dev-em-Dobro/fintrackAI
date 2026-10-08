@@ -3,35 +3,11 @@ import 'dayjs/locale/pt-br'
 import { TransactionIcon } from '@/src/app/_components/transaction-icon'
 import Link from 'next/link'
 import { AddTransactionButton } from './add-transaction-button'
+import { getRecentTransactions } from '../_data/get-recent-transactions'
 
-const recentTransactions = [
-    {
-        id: '1',
-        name: 'Salário',
-        type: 'DEPOSIT',
-        category: 'SALARY',
-        amount: 5000,
-        date: new Date('2026-03-05'),
-    },
-    {
-        id: '2',
-        name: 'Supermercado',
-        type: 'EXPENSE',
-        category: 'FOOD',
-        amount: 450.9,
-        date: new Date('2026-03-10'),
-    },
-    {
-        id: '3',
-        name: 'Tesouro Direto',
-        type: 'INVESTMENT',
-        category: 'OTHER',
-        amount: 300,
-        date: new Date('2026-03-12'),
-    },
-] as const
+export const RecentTransactions = async () => {
+    const recentTransactions = await getRecentTransactions()
 
-export const RecentTransactions = () => {
     return (
         <div>
             <div className="flex justify-between items-center mb-5">

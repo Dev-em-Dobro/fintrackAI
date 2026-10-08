@@ -5,8 +5,20 @@ import { FinancialMetricCard } from './_components/financial-metric-card'
 import { ChartCard } from './_components/chart-card'
 import { AiInsights } from './_components/ai-insights'
 import { RecentTransactions } from './_components/recent-transactions'
+import { getDashboard } from './_data/get-dashboard'
+import dayjs from 'dayjs'
 
-export default function Home() {
+interface DashboardPageProps {
+    searchParams: Promise<{ month?: string }>
+}
+
+export default async function Home({ searchParams }: DashboardPageProps) {
+    const { month } = await searchParams
+
+    const currentMonth = month ?? dayjs().format('MM')
+
+    const data = await getDashboard(currentMonth)
+
     return (
         <div className="flex min-h-screen bg-[#0F111A]">
             <Sidebar />
@@ -16,21 +28,24 @@ export default function Home() {
                     <section className="grid lg:grid-cols-3 grid-cols-1 gap-6">
                         <div className="lg:col-span-2 col-span-1">
                             <BalanceCard
-                                balance={2700}
-                                revenues={5000}
-                                expenses={2300}
+                                balance={data.balance}
+                                revenues={data.depositsTotal}
+                                expenses={data.expensesTotal}
                             />
                         </div>
-                        <FinancialMetricCard difference={300} percentage={12} />
+                        <FinancialMetricCard
+                            difference={data.difference}
+                            percentage={data.percentage}
+                        />
                     </section>
 
                     <section className="flex gap-8">
                         <div className="flex-1">
                             <ChartCard
-                                depositsTotal={5000}
-                                expensesTotal={2300}
-                                investmentsTotal={1000}
-                                balance={1700}
+                                depositsTotal={data.depositsTotal}
+                                expensesTotal={data.expensesTotal}
+                                investmentsTotal={data.investmentsTotal}
+                                balance={data.balance}
                             />
                         </div>
 

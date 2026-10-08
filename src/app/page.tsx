@@ -2,6 +2,7 @@ import { Sidebar } from './_components/sidebar'
 import { Header } from './_components/header'
 import BalanceCard from './_components/balance-card'
 import { FinancialMetricCard } from './_components/financial-metric-card'
+import { ChartCard } from './_components/chart-card'
 
 export default function Home() {
     return (
@@ -19,6 +20,17 @@ export default function Home() {
                             />
                         </div>
                         <FinancialMetricCard difference={300} percentage={12} />
+                    </section>
+
+                    <section className="flex gap-8">
+                        <div className="flex-1">
+                            <ChartCard
+                                depositsTotal={5000}
+                                expensesTotal={2300}
+                                investmentsTotal={1000}
+                                balance={1700}
+                            />
+                        </div>
                     </section>
                 </main>
             </div>

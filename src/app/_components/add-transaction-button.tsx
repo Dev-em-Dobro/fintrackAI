@@ -144,7 +144,7 @@ export const AddTransactionButton = () => {
                                             <SelectValue placeholder="Selecione o tipo" />
                                         </SelectTrigger>
 
-                                        <SelectContent>
+                                        <SelectContent position="popper">
                                             {TRANSACTION_TYPE_OPTIONS.map(
                                                 (opt) => (
                                                     <SelectItem
@@ -181,7 +181,7 @@ export const AddTransactionButton = () => {
                                             <SelectValue placeholder="Selecione a categoria" />
                                         </SelectTrigger>
 
-                                        <SelectContent>
+                                        <SelectContent position="popper">
                                             {TRANSACTION_CATEGORY_OPTIONS.map(
                                                 (opt) => (
                                                     <SelectItem
@@ -218,7 +218,7 @@ export const AddTransactionButton = () => {
                                             <SelectValue placeholder="Selecione o método de pagamento" />
                                         </SelectTrigger>
 
-                                        <SelectContent>
+                                        <SelectContent position="popper">
                                             {TRANSACTION_PAYMENT_METHOD_OPTIONS.map(
                                                 (opt) => (
                                                     <SelectItem

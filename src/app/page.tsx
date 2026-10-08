@@ -4,6 +4,7 @@ import BalanceCard from './_components/balance-card'
 import { FinancialMetricCard } from './_components/financial-metric-card'
 import { ChartCard } from './_components/chart-card'
 import { AiInsights } from './_components/ai-insights'
+import { RecentTransactions } from './_components/recent-transactions'
 
 export default function Home() {
     return (
@@ -36,6 +37,10 @@ export default function Home() {
                         <div className="flex-1">
                             <AiInsights />
                         </div>
+                    </section>
+
+                    <section>
+                        <RecentTransactions />
                     </section>
                 </main>
             </div>

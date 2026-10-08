@@ -50,7 +50,17 @@ export default async function Home({ searchParams }: DashboardPageProps) {
                         </div>
 
                         <div className="flex-1">
-                            <AiInsights />
+                            <AiInsights
+                                month={currentMonth}
+                                year={dayjs().year()}
+                                depositsTotal={data.depositsTotal}
+                                expensesTotal={data.expensesTotal}
+                                investmentsTotal={data.investmentsTotal}
+                                balance={data.balance}
+                                totalExpensePerCategory={
+                                    data.totalExpensePerCategory
+                                }
+                            />
                         </div>
                     </section>
 

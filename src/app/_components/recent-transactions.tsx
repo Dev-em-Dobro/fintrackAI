@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/pt-br'
 import { TransactionIcon } from '@/src/app/_components/transaction-icon'
 import Link from 'next/link'
+import { AddTransactionButton } from './add-transaction-button'
 
 const recentTransactions = [
     {
@@ -35,6 +36,7 @@ export const RecentTransactions = () => {
         <div>
             <div className="flex justify-between items-center mb-5">
                 <p className="text-xl font-bold">Transações recentes</p>
+                <AddTransactionButton />
             </div>
 
             <div className="bg-[#161b26] rounded-3xl border border-[#1d293d] overflow-hidden">
